@@ -8,6 +8,8 @@ public class EmployeeReport {
 	int dailyhrs = 8;
 	int partTimeHours = 4;
 	int fullTimeHours = 8;
+	int daysPerMonth=20;
+	int monthlyWage;
 	int fullTimeWage;
 	int partTimeWage;
 	int dailywage;
@@ -54,21 +56,28 @@ public class EmployeeReport {
 		switch (empCheck) {
 		case 1:
 			empHour = 8;
-			System.out.print("full time");
+			System.out.print("Full time Present");
 			break;
 		case 2:
 			empHour = 4;
-			System.out.print("part time");
+			System.out.print("Part time Present");
 			break;
 		case 0:
 			empHour = 0;
-			System.out.println("absent");
+			System.out.println("Absent");
 			break;
 
 		default:
 			empHour = 0;
 			break;
 		}
+		System.out.println();
+	}
+	
+	public void monthlyWage() {
+	
+		 monthlyWage= dailywage * daysPerMonth;
+			System.out.println("Monthly Wage Of Employee is ="+monthlyWage);
 	}
 
 	public static void main(String[] args) {
@@ -83,6 +92,8 @@ public class EmployeeReport {
 		obj.empFullAndPartTimeWage();
 		
 		obj.attendanceBySwitchCase();
+		
+		obj.monthlyWage();
 	}
 
 }
