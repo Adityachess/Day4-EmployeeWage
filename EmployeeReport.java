@@ -6,6 +6,10 @@ public class EmployeeReport {
 
 	int wageperhr = 20;
 	int dailyhrs = 8;
+	int partTimeHours = 4;
+	int fullTimeHours = 8;
+	int fullTimeWage;
+	int partTimeWage;
 	int dailywage;
 
 	void Welcome() {
@@ -21,8 +25,7 @@ public class EmployeeReport {
 
 		if (empCheck == 0) {
 			System.out.println("Employee is Present");
-		}
-		else {
+		} else {
 			System.out.println("Employee is Absent");
 		}
 	}
@@ -33,12 +36,24 @@ public class EmployeeReport {
 		System.out.println("Employee Daily wage = " + dailywage);
 	}
 
+	public void empFullAndPartTimeWage() {
+		
+		fullTimeWage = wageperhr * dailyhrs;
+		System.out.println("Employee Full Time Wage :"+ fullTimeWage);
+		
+	    partTimeWage = wageperhr * partTimeHours;
+	    System.out.println("Employee Part Time Wage :"+ partTimeWage);
+	}
+
 	public static void main(String[] args) {
 		EmployeeReport obj = new EmployeeReport();
 		obj.Welcome();
+		
 		obj.employeeAttendance();
+		
 		obj.dailyWage();
-
+		
+		obj.empFullAndPartTimeWage();
 	}
 
 }
